@@ -9,5 +9,5 @@
 import Foundation
 
 class Profile: Codable {
-    
+    var buttons: [ButtonProfile]?
 }

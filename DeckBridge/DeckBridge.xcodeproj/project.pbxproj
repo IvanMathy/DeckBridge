@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C20665A21E1B06C0082570E /* DeckController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20665921E1B06C0082570E /* DeckController.swift */; };
+		2C20666021E2BB160082570E /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20665E21E2BB160082570E /* StateView.swift */; };
 		2C7625EC21E194BB00007950 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7625EB21E194BB00007950 /* AppDelegate.swift */; };
 		2C7625EE21E194BC00007950 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C7625ED21E194BC00007950 /* Assets.xcassets */; };
 		2C7625F121E194BC00007950 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C7625EF21E194BC00007950 /* MainMenu.xib */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C20665921E1B06C0082570E /* DeckController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckController.swift; sourceTree = "<group>"; };
+		2C20665E21E2BB160082570E /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		2C7625E821E194BB00007950 /* DeckBridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeckBridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7625EB21E194BB00007950 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C7625ED21E194BC00007950 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				2C7625FA21E1959600007950 /* ButtonView.swift */,
+				2C20665E21E2BB160082570E /* StateView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -95,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				2C7625FD21E196D400007950 /* ActionsTableViewController.swift */,
+				2C20665921E1B06C0082570E /* DeckController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -197,7 +203,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C20666021E2BB160082570E /* StateView.swift in Sources */,
 				2C76260321E19BD700007950 /* ButtonProfile.swift in Sources */,
+				2C20665A21E1B06C0082570E /* DeckController.swift in Sources */,
 				2C76260521E19C9100007950 /* Action.swift in Sources */,
 				2C7625FB21E1959600007950 /* ButtonView.swift in Sources */,
 				2C76260A21E19DBA00007950 /* SoundAction.swift in Sources */,
