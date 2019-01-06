@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -10,12 +11,9 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application" customClass="NSApplication"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target">
-            <connections>
-                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
-            </connections>
-        </customObject>
+        <customObject id="-3" userLabel="Application"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="DeckBridge" customModuleProvider="target"/>
+        <viewController id="vpS-Tu-FVy" customClass="ActionsTableViewController" customModule="DeckBridge" customModuleProvider="target"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
@@ -677,16 +675,329 @@
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="140" y="-182"/>
         </menu>
-        <window title="DeckBridge" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+        <window title="BridgeDeck" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="uPq-nY-6Wl">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
-                <autoresizingMask key="autoresizingMask"/>
+            <rect key="contentRect" x="335" y="390" width="650" height="360"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
+            <value key="minSize" type="size" width="650" height="360"/>
+            <value key="maxSize" type="size" width="650" height="360"/>
+            <view key="contentView" wantsLayer="YES" id="DVY-d0-Ixp">
+                <rect key="frame" x="0.0" y="0.0" width="650" height="360"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <visualEffectView wantsLayer="YES" blendingMode="withinWindow" material="titlebar" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="Rs9-Yq-NYd">
+                        <rect key="frame" x="0.0" y="0.0" width="449" height="360"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AOk-U1-gaA">
+                                <rect key="frame" x="15" y="54" width="420" height="252"/>
+                                <subviews>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="InP-zs-Hw6">
+                                        <rect key="frame" x="0.0" y="168" width="420" height="84"/>
+                                        <subviews>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="T9H-tW-45T" customClass="ButtonView" customModule="BridgeDeck" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="84"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="84" id="20O-LC-dWc"/>
+                                                    <constraint firstAttribute="width" constant="84" id="qyT-GD-RTS"/>
+                                                </constraints>
+                                            </customView>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Ynz-Np-4BI" customClass="ButtonView" customModule="BridgeDeck" customModuleProvider="target">
+                                                <rect key="frame" x="84" y="0.0" width="84" height="84"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="84" id="LqO-To-6ql"/>
+                                                    <constraint firstAttribute="height" constant="84" id="WQO-iX-ac3"/>
+                                                </constraints>
+                                            </customView>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="HB8-F1-Cxc" customClass="ButtonView" customModule="BridgeDeck" customModuleProvider="target">
+                                                <rect key="frame" x="168" y="0.0" width="84" height="84"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="84" id="Vb0-6f-FhZ"/>
+                                                    <constraint firstAttribute="height" constant="84" id="o6i-AX-nVj"/>
+                                                </constraints>
+                                            </customView>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="yGi-sy-8AC" customClass="ButtonView" customModule="BridgeDeck" customModuleProvider="target">
+                                                <rect key="frame" x="252" y="0.0" width="84" height="84"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="84" id="0I6-I2-lVT"/>
+                                                    <constraint firstAttribute="width" constant="84" id="F40-Gx-NnU"/>
+                                                </constraints>
+                                            </customView>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="5OU-YQ-iwn" customClass="ButtonView" customModule="BridgeDeck" customModuleProvider="target">
+                                                <rect key="frame" x="336" y="0.0" width="84" height="84"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="84" id="7iw-BO-Oyt"/>
+                                                    <constraint firstAttribute="height" constant="84" id="PRB-fc-xrz"/>
+                                                </constraints>
+                                            </customView>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jlv-HO-a0h">
+                                        <rect key="frame" x="0.0" y="84" width="420" height="84"/>
+                                        <subviews>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="aYe-da-Cxe" customClass="ButtonView" customModule="BridgeDeck" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="84"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="84" id="IK2-D9-2Qd"/>
+                                                    <constraint firstAttribute="height" constant="84" id="yiS-KA-RrL"/>
+                                                </constraints>
+                                            </customView>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="546-Dx-Rje" customClass="ButtonView" customModule="BridgeDeck" customModuleProvider="target">
+                                                <rect key="frame" x="84" y="0.0" width="84" height="84"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="84" id="tUl-pn-DsQ"/>
+                                                    <constraint firstAttribute="width" constant="84" id="y9z-Nm-jd5"/>
+                                                </constraints>
+                                            </customView>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="BvN-rU-jNd" customClass="ButtonView" customModule="BridgeDeck" customModuleProvider="target">
+                                                <rect key="frame" x="168" y="0.0" width="84" height="84"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="84" id="CWe-Kq-1fN"/>
+                                                    <constraint firstAttribute="height" constant="84" id="pGq-yS-6VM"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="selected" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </customView>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="NSQ-MJ-U94" customClass="ButtonView" customModule="BridgeDeck" customModuleProvider="target">
+                                                <rect key="frame" x="252" y="0.0" width="84" height="84"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="84" id="6QG-3y-Jki"/>
+                                                    <constraint firstAttribute="width" constant="84" id="Abm-D7-gEA"/>
+                                                </constraints>
+                                            </customView>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="eNS-Hu-Zxk" customClass="ButtonView" customModule="BridgeDeck" customModuleProvider="target">
+                                                <rect key="frame" x="336" y="0.0" width="84" height="84"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="84" id="5bP-XQ-Ip7"/>
+                                                    <constraint firstAttribute="width" constant="84" id="WuY-5i-yBo"/>
+                                                </constraints>
+                                            </customView>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ubr-wP-eUj">
+                                        <rect key="frame" x="0.0" y="0.0" width="420" height="84"/>
+                                        <subviews>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="3ee-AF-abb" customClass="ButtonView" customModule="BridgeDeck" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="84"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="84" id="8EO-Ds-fNa"/>
+                                                    <constraint firstAttribute="height" constant="84" id="y7M-X2-eJ5"/>
+                                                </constraints>
+                                            </customView>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="4QT-ln-ZXe" customClass="ButtonView" customModule="BridgeDeck" customModuleProvider="target">
+                                                <rect key="frame" x="84" y="0.0" width="84" height="84"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="84" id="0V1-u2-tZF"/>
+                                                    <constraint firstAttribute="width" constant="84" id="oeT-iy-r8p"/>
+                                                </constraints>
+                                            </customView>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Nb4-0b-ZsV" customClass="ButtonView" customModule="BridgeDeck" customModuleProvider="target">
+                                                <rect key="frame" x="168" y="0.0" width="84" height="84"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="84" id="ea4-h6-ffz"/>
+                                                    <constraint firstAttribute="width" constant="84" id="n1v-Dk-2V9"/>
+                                                </constraints>
+                                            </customView>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="5Ck-wZ-gcu" customClass="ButtonView" customModule="BridgeDeck" customModuleProvider="target">
+                                                <rect key="frame" x="252" y="0.0" width="84" height="84"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="84" id="Apo-cp-scv"/>
+                                                    <constraint firstAttribute="width" constant="84" id="CE4-9i-3QO"/>
+                                                </constraints>
+                                            </customView>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="avj-Mo-NaS" customClass="ButtonView" customModule="BridgeDeck" customModuleProvider="target">
+                                                <rect key="frame" x="336" y="0.0" width="84" height="84"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="84" id="HG4-wn-bFg"/>
+                                                    <constraint firstAttribute="width" constant="84" id="uP0-Xq-nDk"/>
+                                                </constraints>
+                                            </customView>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="AOk-U1-gaA" firstAttribute="centerX" secondItem="Rs9-Yq-NYd" secondAttribute="centerX" id="4Zp-jw-2qk"/>
+                            <constraint firstItem="AOk-U1-gaA" firstAttribute="centerY" secondItem="Rs9-Yq-NYd" secondAttribute="centerY" id="aKW-2z-zd5"/>
+                        </constraints>
+                    </visualEffectView>
+                    <visualEffectView wantsLayer="YES" appearanceType="vibrantDark" blendingMode="withinWindow" material="sidebar" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="anI-YO-Zaj">
+                        <rect key="frame" x="450" y="0.0" width="200" height="50"/>
+                        <subviews>
+                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1e5-5g-LwK">
+                                <rect key="frame" x="8" y="5" width="185" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="90" tickMarkPosition="above" sliderType="linear" id="6Ga-h6-bPn"/>
+                            </slider>
+                            <textField wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DWq-z7-FPm">
+                                <rect key="frame" x="8" y="27" width="77" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Brightness:" id="tlW-MR-Qpy">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="7q8-fy-zy9"/>
+                            <constraint firstAttribute="width" constant="200" id="MNq-hy-wuT"/>
+                        </constraints>
+                    </visualEffectView>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="pvG-5U-bcn">
+                        <rect key="frame" x="450" y="50" width="200" height="310"/>
+                        <subviews>
+                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="34" horizontalPageScroll="10" verticalLineScroll="34" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7N-Si-IUL">
+                                <rect key="frame" x="0.0" y="1" width="200" height="309"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="xdi-VC-ZBb">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="309"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="none" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="32" rowSizeStyle="automatic" viewBased="YES" id="VKL-YP-lEd">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="309"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <size key="intercellSpacing" width="3" height="2"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="gridColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <tableColumns>
+                                                <tableColumn width="195" minWidth="40" maxWidth="1000" id="nl9-PA-zEG">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="6Oa-ER-cyI">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView id="cGK-hT-Tun">
+                                                            <rect key="frame" x="1" y="1" width="195" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HyL-sb-AjB">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="195" height="17"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="2NQ-ny-BOO">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <connections>
+                                                                <outlet property="textField" destination="HyL-sb-AjB" id="Wyv-zA-lrE"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                        <button identifier="addActionButton" verticalHuggingPriority="750" id="0po-UC-o0e">
+                                                            <rect key="frame" x="1" y="20" width="195" height="32"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="push" title="Add Action" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="PIT-OT-Tlk">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                        </button>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                            </tableColumns>
+                                            <connections>
+                                                <outlet property="dataSource" destination="vpS-Tu-FVy" id="OJe-w1-ksk"/>
+                                                <outlet property="delegate" destination="vpS-Tu-FVy" id="3LK-z8-1zL"/>
+                                            </connections>
+                                        </tableView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="qKb-C1-A9x">
+                                    <rect key="frame" x="1" y="246" width="178" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="TUq-vm-Ky6">
+                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="m7N-Si-IUL" secondAttribute="bottom" constant="1" id="7Cm-HN-pTR"/>
+                            <constraint firstAttribute="trailing" secondItem="m7N-Si-IUL" secondAttribute="trailing" id="JQD-Yt-YXJ"/>
+                            <constraint firstItem="m7N-Si-IUL" firstAttribute="leading" secondItem="pvG-5U-bcn" secondAttribute="leading" id="S0M-JN-hVV"/>
+                            <constraint firstAttribute="width" constant="200" id="WXj-4V-r1r"/>
+                            <constraint firstItem="m7N-Si-IUL" firstAttribute="top" secondItem="pvG-5U-bcn" secondAttribute="top" id="oj9-ij-Ke6"/>
+                        </constraints>
+                    </customView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="anI-YO-Zaj" secondAttribute="trailing" id="7UK-BQ-BXd"/>
+                    <constraint firstAttribute="trailing" secondItem="pvG-5U-bcn" secondAttribute="trailing" id="IsI-PV-bqQ"/>
+                    <constraint firstItem="Rs9-Yq-NYd" firstAttribute="top" secondItem="DVY-d0-Ixp" secondAttribute="top" id="Jbs-ax-eoI"/>
+                    <constraint firstItem="anI-YO-Zaj" firstAttribute="top" secondItem="pvG-5U-bcn" secondAttribute="bottom" id="OaZ-iY-Oqm"/>
+                    <constraint firstAttribute="bottom" secondItem="anI-YO-Zaj" secondAttribute="bottom" id="SmS-Bj-Y2m"/>
+                    <constraint firstAttribute="bottom" secondItem="Rs9-Yq-NYd" secondAttribute="bottom" id="ZPF-V0-tKx"/>
+                    <constraint firstAttribute="trailing" secondItem="Rs9-Yq-NYd" secondAttribute="trailing" constant="201" id="elH-wt-pLg"/>
+                    <constraint firstItem="Rs9-Yq-NYd" firstAttribute="leading" secondItem="DVY-d0-Ixp" secondAttribute="leading" id="ttM-KV-Zrw"/>
+                    <constraint firstItem="pvG-5U-bcn" firstAttribute="top" secondItem="DVY-d0-Ixp" secondAttribute="top" id="xNE-Up-abl"/>
+                </constraints>
             </view>
+            <point key="canvasLocation" x="139" y="161"/>
         </window>
     </objects>
 </document>

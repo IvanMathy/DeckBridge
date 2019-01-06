@@ -10,6 +10,15 @@
 		2C7625EC21E194BB00007950 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7625EB21E194BB00007950 /* AppDelegate.swift */; };
 		2C7625EE21E194BC00007950 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C7625ED21E194BC00007950 /* Assets.xcassets */; };
 		2C7625F121E194BC00007950 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C7625EF21E194BC00007950 /* MainMenu.xib */; };
+		2C7625FB21E1959600007950 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7625FA21E1959600007950 /* ButtonView.swift */; };
+		2C7625FE21E196D400007950 /* ActionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7625FD21E196D400007950 /* ActionsTableViewController.swift */; };
+		2C76260121E19B9D00007950 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C76260021E19B9D00007950 /* Profile.swift */; };
+		2C76260321E19BD700007950 /* ButtonProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C76260221E19BD700007950 /* ButtonProfile.swift */; };
+		2C76260521E19C9100007950 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C76260421E19C9100007950 /* Action.swift */; };
+		2C76260821E19D1700007950 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C76260721E19D1700007950 /* ActionType.swift */; };
+		2C76260A21E19DBA00007950 /* SoundAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C76260921E19DBA00007950 /* SoundAction.swift */; };
+		2C76260C21E1A0C500007950 /* ActionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C76260B21E1A0C500007950 /* ActionContainer.swift */; };
+		2C76260F21E1A49700007950 /* OKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C76260E21E1A49700007950 /* OKError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +28,15 @@
 		2C7625F021E194BC00007950 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2C7625F221E194BC00007950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C7625F321E194BC00007950 /* DeckBridge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeckBridge.entitlements; sourceTree = "<group>"; };
+		2C7625FA21E1959600007950 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		2C7625FD21E196D400007950 /* ActionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsTableViewController.swift; sourceTree = "<group>"; };
+		2C76260021E19B9D00007950 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		2C76260221E19BD700007950 /* ButtonProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonProfile.swift; sourceTree = "<group>"; };
+		2C76260421E19C9100007950 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		2C76260721E19D1700007950 /* ActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionType.swift; sourceTree = "<group>"; };
+		2C76260921E19DBA00007950 /* SoundAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundAction.swift; sourceTree = "<group>"; };
+		2C76260B21E1A0C500007950 /* ActionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionContainer.swift; sourceTree = "<group>"; };
+		2C76260E21E1A49700007950 /* OKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +69,11 @@
 		2C7625EA21E194BB00007950 /* DeckBridge */ = {
 			isa = PBXGroup;
 			children = (
+				2C76260D21E1A48500007950 /* Extensions */,
+				2C76260621E19CEB00007950 /* Actions */,
+				2C7625FF21E19B8F00007950 /* Models */,
+				2C7625FC21E1969A00007950 /* Controllers */,
+				2C7625F921E1958B00007950 /* UI */,
 				2C7625EB21E194BB00007950 /* AppDelegate.swift */,
 				2C7625ED21E194BC00007950 /* Assets.xcassets */,
 				2C7625EF21E194BC00007950 /* MainMenu.xib */,
@@ -58,6 +81,50 @@
 				2C7625F321E194BC00007950 /* DeckBridge.entitlements */,
 			);
 			path = DeckBridge;
+			sourceTree = "<group>";
+		};
+		2C7625F921E1958B00007950 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2C7625FA21E1959600007950 /* ButtonView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2C7625FC21E1969A00007950 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2C7625FD21E196D400007950 /* ActionsTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2C7625FF21E19B8F00007950 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2C76260021E19B9D00007950 /* Profile.swift */,
+				2C76260221E19BD700007950 /* ButtonProfile.swift */,
+				2C76260421E19C9100007950 /* Action.swift */,
+				2C76260B21E1A0C500007950 /* ActionContainer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2C76260621E19CEB00007950 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				2C76260721E19D1700007950 /* ActionType.swift */,
+				2C76260921E19DBA00007950 /* SoundAction.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		2C76260D21E1A48500007950 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2C76260E21E1A49700007950 /* OKError.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +197,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C76260321E19BD700007950 /* ButtonProfile.swift in Sources */,
+				2C76260521E19C9100007950 /* Action.swift in Sources */,
+				2C7625FB21E1959600007950 /* ButtonView.swift in Sources */,
+				2C76260A21E19DBA00007950 /* SoundAction.swift in Sources */,
+				2C76260F21E1A49700007950 /* OKError.swift in Sources */,
+				2C76260121E19B9D00007950 /* Profile.swift in Sources */,
 				2C7625EC21E194BB00007950 /* AppDelegate.swift in Sources */,
+				2C7625FE21E196D400007950 /* ActionsTableViewController.swift in Sources */,
+				2C76260821E19D1700007950 /* ActionType.swift in Sources */,
+				2C76260C21E1A0C500007950 /* ActionContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
