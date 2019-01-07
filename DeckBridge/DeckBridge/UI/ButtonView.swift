@@ -11,6 +11,7 @@ import Cocoa
 @IBDesignable class ButtonView: NSView {
     
     @IBInspectable var selected:Bool = false
+    @IBInspectable var position:Int = 0
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -32,6 +33,11 @@ import Cocoa
         }
        
 
+    }
+    
+    override func mouseDown(with event: NSEvent) {
+        self.selected = !selected
+        self.needsDisplay = true
     }
     
 }
