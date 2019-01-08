@@ -10,8 +10,22 @@ import Cocoa
 
 class ActionsTableViewController: NSViewController {
 
+    @IBOutlet weak var stateView: StateView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    public func inspectKey(_ profile: KeyProfile?) {
+        guard let profile = profile else {
+            stateView.setState(.noSelection)
+            return
+        }
+        
+        guard profile.actions != nil, profile.actions?.isEmpty == false else {
+            stateView.setState(.noAction)
+            return
+        }
     }
     
 }

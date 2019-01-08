@@ -1,5 +1,5 @@
 //
-//  ButtonProfile.swift
+//  KeyProfile.swift
 //  DeckBridge
 //
 //  Created by Ivan on 1/6/19.
@@ -8,9 +8,13 @@
 
 import Foundation
 
-class ButtonProfile: Codable {
+class KeyProfile: Codable {
     public let position: Int
-    public let actions: [Action]?
+    public var actions: [Action]? = nil
+    
+    init(position:Int) {
+        self.position = position
+    }
     
     required public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)

@@ -1,5 +1,5 @@
 //
-//  ButtonView.swift
+//  KeyView.swift
 //  BridgeDeck
 //
 //  Created by Ivan on 7/21/18.
@@ -8,11 +8,21 @@
 
 import Cocoa
 
-@IBDesignable class ButtonView: NSView {
+@IBDesignable class KeyView: NSView {
     
     @IBInspectable var selected:Bool = false
     @IBInspectable var position:Int = 0
-
+    
+    init(position:Int) {
+        self.position = position
+        super.init(frame: NSRect.zero)
+        NotificationCenter.default.addObserver(self, selector: #selector(didSelectKey(notification:)), name: .didSelectKey, object: nil)
+    }
+    
+    required init?(coder decoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
 
@@ -35,9 +45,26 @@ import Cocoa
 
     }
     
+    // State Handling
+    
     override func mouseDown(with event: NSEvent) {
-        self.selected = !selected
-        self.needsDisplay = true
+        self.setSelected(true)
+        
+        NotificationCenter.default.post(name: .didSelectKey, object: self.position)
     }
     
+    @objc func didSelectKey(notification: NSNotification) {
+        
+        guard let selection = notification.object as? Int,
+            selection != position else {
+            return
+        }
+        
+        self.setSelected(false)
+    }
+    
+    func setSelected(_ state: Bool) {
+        self.selected = state
+        self.needsDisplay = true
+    }
 }

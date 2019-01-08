@@ -9,5 +9,16 @@
 import Foundation
 
 class Profile: Codable {
-    var buttons: [ButtonProfile]?
+    var keys: [KeyProfile]
+    
+    init(device: Device) {
+        keys = [KeyProfile]()
+        
+        for row in device.layout {
+            for key in row {
+                let keyProfile = KeyProfile(position: key)
+                keys.append(keyProfile)
+            }
+        }
+    }
 }

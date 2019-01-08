@@ -14,14 +14,18 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="PF6-Ez-feO" customClass="DeckController" customModule="DeckBridge" customModuleProvider="target">
             <connections>
+                <outlet property="actionsTableViewController" destination="vpS-Tu-FVy" id="MlU-o1-8ze"/>
                 <outlet property="keyContainer" destination="AOk-U1-gaA" id="0m3-CC-ScP"/>
-                <outlet property="stateView" destination="uqQ-I2-uwu" id="kwo-so-4Zh"/>
                 <outlet property="tableView" destination="VKL-YP-lEd" id="3n4-m9-PtV"/>
                 <outlet property="view" destination="DVY-d0-Ixp" id="gXk-gP-wyT"/>
             </connections>
         </customObject>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="DeckBridge" customModuleProvider="target"/>
-        <viewController id="vpS-Tu-FVy" customClass="ActionsTableViewController" customModule="DeckBridge" customModuleProvider="target"/>
+        <viewController id="vpS-Tu-FVy" customClass="ActionsTableViewController" customModule="DeckBridge" customModuleProvider="target">
+            <connections>
+                <outlet property="stateView" destination="uqQ-I2-uwu" id="RM3-jm-2b3"/>
+            </connections>
+        </viewController>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>

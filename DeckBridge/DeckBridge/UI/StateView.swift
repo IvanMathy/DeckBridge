@@ -27,7 +27,7 @@ class StateView: NSView {
         case .noAction:
             show(true)
             button.isHidden = false
-            label.stringValue = "You don't have any action on the selected key. Let's change that!"
+            label.stringValue = "You don't have any action on this key. Let's change that!"
         case.noSelection:
             show(true)
             button.isHidden = true
